@@ -1,0 +1,192 @@
+/* .user-card-skeleton {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.skeleton-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin-right: 16px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-info {
+  flex: 1;
+}
+
+.skeleton-name {
+  height: 20px;
+  width: 60%;
+  background: #e0e0e0;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-email {
+  height: 16px;
+  width: 80%;
+  background: #e0e0e0;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-body {
+  margin-bottom: 16px;
+}
+
+.skeleton-detail {
+  height: 16px;
+  background: #e0e0e0;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-detail:last-child {
+  width: 70%;
+}
+
+.skeleton-footer {
+  display: flex;
+  gap: 8px;
+}
+
+.skeleton-button {
+  height: 36px;
+  width: 100px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}  */
+
+
+
+
+/* UserCardSkeleton.css */
+.user-card-skeleton {
+  --skeleton-base: #f0f0f0;
+  --skeleton-highlight: #e0e0e0;
+  --skeleton-radius: 4px;
+  --animation-duration: 1.6s;
+
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skeleton-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--skeleton-base);
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+.skeleton-info {
+  flex: 1;
+}
+
+.skeleton-name {
+  height: 20px;
+  width: 60%;
+  margin-bottom: 8px;
+  border-radius: var(--skeleton-radius);
+  overflow: hidden;
+}
+
+.skeleton-email {
+  height: 16px;
+  width: 80%;
+  border-radius: var(--skeleton-radius);
+  overflow: hidden;
+}
+
+.skeleton-body {
+  margin-bottom: 16px;
+}
+
+.skeleton-detail {
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: var(--skeleton-radius);
+  overflow: hidden;
+}
+
+.skeleton-detail:last-child {
+  width: 70%;
+}
+
+.skeleton-footer {
+  display: flex;
+  gap: 8px;
+}
+
+.skeleton-button {
+  height: 36px;
+  width: 100px;
+  border-radius: var(--skeleton-radius);
+  overflow: hidden;
+}
+
+/* Shimmer animation for all elements */
+.skeleton-avatar::before,
+.skeleton-name::before,
+.skeleton-email::before,
+.skeleton-detail::before,
+.skeleton-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--skeleton-highlight) 50%,
+    transparent 100%
+  );
+  animation: shimmer var(--animation-duration) infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}

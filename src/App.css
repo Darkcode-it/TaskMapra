@@ -1,0 +1,239 @@
+/* Modern styling for the application
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: black;
+  direction: rtl;
+}
+
+nav {
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+ color: black;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3498db;
+  ;
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Form styling */
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input,
+button {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: right;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.users-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-item:last-child {
+  border-bottom: none;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .stats {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .error-message {
+  flex-direction: row-reverse;
+}
+
+*/
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --background-color: #ffffff;
+  --text-color: #212529;
+  --font-size-base: 16px;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Amiri";
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: 1.25rem;
+  /* 20px / 16px */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  /* 20px / 16px */
+  background: var(--light-color);
+  padding: 0.625rem;
+  /* 10px / 16px */
+}
+
+.user-form {
+  max-width: 31.25rem;
+  /* 500px / 16px */
+  margin: 1.25rem 0;
+  /* 20px / 16px */
+}
+
+.form-group {
+  margin-bottom: 0.9375rem;
+  /* 15px / 16px */
+}
+
+.form-group input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.error {
+  border: 1px solid var(--danger-color);
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.8rem;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  /* 200px / 16px */
+  gap: 1.25rem;
+  /* 20px / 16px */
+}
+
+.user-card {
+  border: 1px solid var(--dark-color);
+  padding: 0.625rem;
+  /* 10px / 16px */
+  border-radius: 0.3125rem;
+  /* 5px / 16px */
+}
+
+.user-card.selected {
+  background-color: var(--success-color);
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.3125rem;
+  /* 5px / 16px */
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 3.125rem;
+  /* 50px / 16px */
+}
+
+.spinner {
+  border: 0.25rem solid rgba(0, 0, 0, 0.1);
+  /* 4px / 16px */
+  width: 2.25rem;
+  /* 36px / 16px */
+  height: 2.25rem;
+  border-radius: 50%;
+  border-left-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+}
