@@ -4,7 +4,7 @@ A modern task management application built with React and Vite.
 
 ## 🌐 Live Demo
 
-Visit the live application: [TaskMapra](https://darkcode-it.github.io/TaskMapra/users)
+Visit the live application: [TaskMapra](https://darkcode-it.github.io/TaskMapra/)
 
 ## 🚀 Features
 
@@ -92,7 +92,7 @@ npm run deploy
 
 ## 🌐 نسخه آنلاین
 
-مشاهده نسخه آنلاین برنامه: [TaskMapra](https://darkcode-it.github.io/TaskMapra/users)
+مشاهده نسخه آنلاین برنامه: [TaskMapra](https://darkcode-it.github.io/TaskMapra/)
 
 ## 🚀 ویژگی‌ها
 
